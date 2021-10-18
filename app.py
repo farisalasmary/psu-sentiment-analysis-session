@@ -1,4 +1,4 @@
-import aranorm2 as aranorm
+import aranorm as aranorm
 
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer

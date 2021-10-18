@@ -3,12 +3,6 @@ sklearn-pandas==1.8.0
 farasapy==0.0.14
 numpy==1.19.5
 pandas==1.1.5
-pandas-datareader==0.9.0
-pandas-gbq==0.13.3
-pandas-profiling==1.4.1
 Flask==1.1.4
 Werkzeug==1.0.1
 gunicorn
-tqdm==4.62.3
-traitlets==5.1.0
-tweepy==3.10.0
