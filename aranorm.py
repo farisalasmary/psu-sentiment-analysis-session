@@ -169,7 +169,7 @@ def remove_non_arabic(text):
 
 
 def keep_arabic_english_n_symbols(text):
-    return ' '.join(re.sub(u"[^\u0621-\u063A\u0640-\u0652a-zA-Z#@_:/ ]", " ", text,  flags=re.UNICODE).split())
+    return ' '.join(re.sub(u"[^\u0621-\u063A\u0640-\u064aa-zA-Z#@_:/ ]", "", text,  flags=re.UNICODE).split())
 
 
 def normalize_hamza(text):
