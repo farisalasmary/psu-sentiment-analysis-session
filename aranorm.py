@@ -153,19 +153,22 @@ all_punctuations = string.punctuation + arabic_punctuations + '()[]{}'
 all_punctuations = ''.join(list(set(all_punctuations)))
 
 
+
 def strip_tashkeel(text):
     text = HARAKAT_PAT.sub('', text)
     text = re.sub(u"[\u064E]", "", text,  flags=re.UNICODE) # fattha
     text = re.sub(u"[\u0671]", "", text,  flags=re.UNICODE) # waSla
-    return text 
-
+    return text
 
 def strip_tatweel(text):
     return re.sub(u'[%s]' % TATWEEL, '', text)
 
 
+# remove non arabic chars + removing Tatweel + remvoing Tashkeel
 def remove_non_arabic(text):
-    return ' '.join(re.sub(u"[^\u0621-\u063A\u0640-\u0652 ]", " ", text,  flags=re.UNICODE).split())
+    text = strip_tashkeel(text)
+    text = strip_tatweel(text)
+    return ' '.join(re.sub(u"[^\u0621-\u063A\u0641-\u064A ]", " ", text,  flags=re.UNICODE).split())
 
 
 def keep_arabic_english_n_symbols(text):
